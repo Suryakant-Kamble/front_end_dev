@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Using Js Gen_Table </title>
+		<link href="bootstrap.min.css" rel="stylesheet">
+	
+	</head>
+	
+	
+	
+	<script>
+		var data = [
+		{ name: "SK", city: "Pune", tel: "022-85645" },
+		{ name: "Namrata", city: "Pune", tel: "020-80645" },
+		{ name: "kanchan", city: "Mumbai", tel: "020-65045" },
+		{ name: "Arushi", city: "Mumbai", tel: "021-55025" },
+		]
+		function table_gen(){
+		
+			var table = document.getElementById('std-data')
+			var index= 0
+			var code_str= "<tr><th>Name</th><th>City</th><th>Tel</th><th>User-ID</th></tr>"
+			
+			while(index <data.length){
+			
+				var temp = data[index];
+				 
+				
+				code_str= code_str + "<tr><td>" + temp.name + "</td> <td>" + temp.city + "</td> <td>" + temp.tel + "</td></tr>"; 
+			
+				index++;
+			
+			}
+			table.innerHTML=code_str
+		
+			
+		}
+		
+		</script>
+		
+	
+	
+	
+	
+	<body>
+		<div class="container">
+			<input class="btn btn-success " type="button" value="Generate a table" onclick="table_gen()">
+			
+			<table class="table table-bordered" id="std-data">
+			
+			</table>
+			
+			
+		</div>
+	
+		
+		
+		
+		
+	
+	
+	
+	
+	</body>
+
+
+
+</html>
